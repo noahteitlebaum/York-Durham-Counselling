@@ -1,0 +1,166 @@
+/* Section heading + intro */
+.mh-resources-heading {
+  font-family: var(--font-heading, 'Cormorant Garamond', serif);
+  font-size: 5rem !important;
+  font-weight: 700;
+  color: #111;
+  text-align: center;
+  margin: 2.5rem 0 3rem;
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+  letter-spacing: 0.04em;
+}
+
+/* underline effect */
+.mh-resources-heading::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -12px;
+  width: 110px;
+  height: 4px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #111, #4c6f52);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+  animation: underlinePulse 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes underlinePulse {
+  0% { width: 70px; opacity: .85; }
+  100% { width: 140px; opacity: 1; }
+}
+
+/* mobile tweak */
+@media (max-width: 600px) {
+  .mh-resources-heading {
+    font-size: 2.4rem;
+  }
+}
+
+.mh-resources-intro {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.9;
+  max-width: 780px;
+  margin: 0 auto 50px auto;
+  text-align: center;
+  color: #28352e;
+}
+
+/* Table layout */
+.mh-resource-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 40px 30px;  /* space between cards */
+  margin-bottom: 70px;
+}
+
+.mh-resource-cell {
+  vertical-align: top;
+}
+
+/* Card styling */
+.mh-resource-card {
+  background: radial-gradient(circle at top left, #f7faf8 0%, #ffffff 60%, #f3f5f2 100%);
+  border-radius: 22px;
+  padding: 26px 26px 30px;
+  text-align: center;
+  box-shadow: 0 18px 45px rgba(40, 63, 50, 0.18);
+  border: 1px solid rgba(60, 92, 70, 0.06);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease;
+}
+
+.mh-resource-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 26px 70px rgba(32, 55, 42, 0.25);
+  border-color: rgba(60, 92, 70, 0.25);
+}
+
+/* Icons */
+.mh-resource-icon {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  margin-bottom: 16px;
+  transition: transform 0.25s ease;
+  display: block;
+  margin: 0 auto 12px auto;   /* centers + adds spacing under */
+}
+
+.mh-resource-card:hover .mh-resource-icon {
+  transform: translateY(-3px) scale(1.03);
+}
+
+/* Title with underline effect */
+.mh-resource-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 700;
+  font-size: 1.7rem;
+  margin-bottom: 10px;
+  position: relative;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  display: inline-block;
+  color: #19241e;
+}
+
+/* cool centered underline animation */
+.mh-resource-title::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #3f6b4c, #7bb392);
+  transform: translateX(-50%) scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease-in-out;
+  border-radius: 999px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mh-resource-card:hover .mh-resource-title::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+/* Body text */
+.mh-resource-text {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #324137;
+  margin-top: 16px;
+}
+
+/* Simple responsiveness */
+@media (max-width: 900px) {
+  .mh-resource-table {
+    border-spacing: 0 24px;
+  }
+
+  .mh-resource-row {
+    display: block;
+  }
+
+  .mh-resource-cell {
+    display: block;
+    width: 100%;
+    padding: 0 20px 24px;
+  }
+
+  .mh-resource-card {
+    max-width: 420px;
+    margin: 0 auto;
+  }
+}

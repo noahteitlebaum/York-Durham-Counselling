@@ -1,0 +1,384 @@
+.mission-table {
+  border: none !important;
+  overflow: hidden;
+  background: radial-gradient(circle at top left, #fdfcf8 0, #f4f7f1 45%, #e4ece4 100%);
+  box-shadow: 0 26px 80px -30px rgba(54, 83, 59, 0.65);
+  position: relative;
+}
+
+/* soft glow behind */
+.mission-table::before {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  background:
+    radial-gradient(circle at 10% 20%, rgba(214, 239, 224, 0.45) 0, transparent 55%),
+    radial-gradient(circle at 80% 80%, rgba(125, 168, 137, 0.4) 0, transparent 55%);
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.mission-row {
+  border: none !important;
+  position: relative;
+  z-index: 1;
+}
+
+.mission-text-cell,
+.mission-image-cell {
+  border: none !important;
+  vertical-align: middle;
+  padding: 3.6rem 3.4rem;
+}
+
+/* Left side */
+.mission-text-cell {
+  width: 60%;
+}
+
+/* subtle card inside */
+.mission-inner {
+  background: rgba(255, 255, 255, 0.88);
+  border-radius: 1.2rem;
+  padding: 2.4rem 2.6rem;
+  box-shadow: 0 20px 60px -30px rgba(54, 83, 59, 0.45);
+  position: relative;
+}
+
+/* small tag above heading */
+.mission-label {
+  display: inline-block;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: #36533b;
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  background: rgba(214, 239, 224, 0.9);
+  margin-bottom: 1.1rem;
+}
+
+/* BIG hero heading */
+.mission-heading {
+  font-family: var(--font-heading, 'Cormorant Garamond', serif);
+  font-size: 5rem;
+  line-height: 1.15;
+  font-weight: 600;
+  margin: 0 0 1.4rem;
+  letter-spacing: 0.04em;
+  color: #111;
+  position: relative;
+  display: inline-block;
+}
+
+/* underline effect under heading */
+.mission-heading::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.6rem;
+  width: 120px;
+  height: 4px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #111, #4c6f52);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35);
+  animation: missionUnderlinePulse 2.8s ease-in-out infinite alternate;
+}
+
+@keyframes missionUnderlinePulse {
+  0%   { width: 80px; opacity: 0.85; }
+  100% { width: 150px; opacity: 1;    }
+}
+
+
+/* text underneath – bigger and comfy */
+.mission-intro {
+  font-size: 2rem;
+  margin: 1.6rem 0 0.8rem;
+  color: #25342c;
+}
+
+.mission-quote {
+  margin-top: -1.5rem;
+}
+
+.mission-body {
+  font-size: 1.07rem;
+  line-height: 1.9;
+  color: #324238;
+  margin: 0 0 1rem;
+}
+
+/* Right side – image area */
+.mission-image-cell {
+  width: 40%;
+  text-align: center;
+  position: relative;
+}
+
+.mission-image-wrap {
+  display: inline-block;
+  padding: 0.8rem;
+  border-radius: 1.6rem;
+  background: linear-gradient(135deg, rgba(214, 239, 224, 0.7), rgba(125, 168, 137, 0.3));
+  box-shadow: 0 26px 70px -30px rgba(54, 83, 59, 0.7);
+}
+
+.mission-image {
+  display: block;
+  width: 620px;
+  max-width: 100%;
+  height: 360px;
+  object-fit: cover;
+  border-radius: 1.3rem;
+}
+
+/* slight float effect on hover */
+.mission-image-wrap:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 34px 90px -34px rgba(54, 83, 59, 0.9);
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
+}
+
+/* =========================================
+   WHY CHOOSE US SECTION
+   ========================================= */
+
+.choose-table {
+  border: none !important;
+  overflow: hidden;
+  background: radial-gradient(circle at top left, #fafbf9 0, #eef4ef 50%, #dce8dc 100%);
+  position: relative;
+}
+
+.choose-row {
+  border: none !important;
+}
+
+.choose-text-cell {
+  padding: 4rem 3.6rem;
+  border: none !important;
+  position: relative;
+}
+
+/* glowing background accents */
+.choose-table::before {
+  content: "";
+  position: absolute;
+  inset: -25%;
+  background:
+    radial-gradient(circle at 15% 15%, rgba(214,239,224,.55), transparent 55%),
+    radial-gradient(circle at 90% 80%, rgba(125,168,137,.5), transparent 60%);
+  pointer-events: none;
+  opacity: .8;
+}
+
+/* ---------- HEADER ---------- */
+
+.choose-heading {
+  font-family: var(--font-heading, 'Cormorant Garamond', serif);
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: .03em;
+  margin: 0 0 2.2rem;
+  color: #111;
+  position: relative;
+  display: inline-block;
+}
+
+.choose-heading::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  height: 5px;
+  width: 160px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #111, #4c6f52);
+  box-shadow: 0 14px 40px rgba(0,0,0,.35);
+  animation: chooseUnderline 3s ease-in-out infinite alternate;
+}
+
+@keyframes chooseUnderline {
+  0% { width: 110px; opacity: .9; }
+  100% { width: 200px; opacity: 1; }
+}
+
+/* ---------- FEATURE LIST ---------- */
+
+.choose-points-table {
+  border: none;
+  width: 100%;
+}
+
+.choose-point {
+  border: none !important;
+  padding: 0 0 1.4rem;
+}
+
+.choose-card {
+  background: rgba(255,255,255,.9);
+  border-radius: 1.2rem;
+  padding: 1.8rem 2rem;
+  box-shadow: 0 18px 60px -28px rgba(54,83,59,.45);
+  transition: transform .28s ease, box-shadow .28s ease, background .28s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* shimmer accent */
+.choose-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(214,239,224,.4), transparent 60%);
+  opacity: .4;
+}
+
+/* hover effect */
+.choose-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 30px 80px -30px rgba(54,83,59,.65);
+}
+
+/* ---------- TEXT ---------- */
+
+.choose-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1b3126;
+  margin: 0 0 .8rem;
+  letter-spacing: .02em;
+}
+
+.choose-body {
+  font-size: 1rem;
+  color: #2d4235;
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media (max-width: 800px) {
+  .choose-text-cell {
+    padding: 3rem 2rem;
+  }
+
+  .choose-heading {
+    font-size: 2.4rem;
+  }
+
+  .choose-title {
+    font-size: 1.3rem;
+  }
+
+  .choose-body {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .choose-text-cell {
+    padding: 2.2rem 1.4rem;
+  }
+
+  .choose-heading {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 960px) {
+  .mission-text-cell,
+  .mission-image-cell {
+    padding: 2.8rem 2.2rem;
+  }
+
+  .mission-heading {
+    font-size: 2.4rem;
+  }
+
+  .mission-inner {
+    padding: 2.1rem 2rem;
+  }
+}
+
+@media (max-width: 780px) {
+  .mission-row {
+    display: block;
+  }
+
+  .mission-text-cell,
+  .mission-image-cell {
+    display: block;
+    width: 100%;
+    padding: 2.4rem 1.8rem;
+  }
+
+  .mission-image-cell {
+    padding-top: 0;
+    text-align: center;
+  }
+
+  .mission-inner {
+    padding: 2rem 1.6rem;
+  }
+
+  .mission-heading {
+    font-size: 2.2rem;
+  }
+
+  /* Make intro + quote bigger */
+  .mission-intro {
+    font-size: 1.7rem;
+    line-height: 1.35;
+  }
+
+  .mission-quote {
+    font-size: 1.5rem;
+    line-height: 1.4;
+    margin-top: 0.5rem;
+    color: #1f2d24;
+  }
+
+  /* Make image wider */
+  .mission-image {
+    width: 95vw;
+    max-width: 620px;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+  }
+}
+
+@media (max-width: 520px) {
+  .mission-text-cell,
+  .mission-image-cell {
+    padding: 2rem 1.2rem;
+  }
+
+  .mission-inner {
+    padding: 1.8rem 1.3rem;
+  }
+
+  .mission-heading {
+    font-size: 2rem;
+  }
+
+  .mission-heading::after {
+    width: 90px;
+  }
+
+  .mission-intro {
+    font-size: 1.7rem;
+  }
+
+  .mission-quote {
+    font-size: 1.5rem;
+  }
+
+  .mission-image {
+    width: 100vw;
+    max-width: none;
+  }
+}

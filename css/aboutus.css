@@ -1,0 +1,198 @@
+.team-heading {
+  font-family: var(--font-heading, 'Cormorant Garamond', serif);
+  font-size: 5rem !important;
+  font-weight: 700;
+  color: #111;
+  text-align: center;
+  margin: 2.5rem 0 3rem;
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+  letter-spacing: 0.04em;
+}
+
+/* underline effect */
+.team-heading::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -12px;
+  width: 110px;
+  height: 4px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #111, #4c6f52);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+  animation: underlinePulse 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes underlinePulse {
+  0% { width: 70px; opacity: .85; }
+  100% { width: 140px; opacity: 1; }
+}
+
+/* mobile tweak */
+@media (max-width: 600px) {
+  .team-heading {
+    font-size: 2.4rem;
+  }
+}
+
+.team-table {
+  border: none;
+  background: transparent;
+  table-layout: fixed;
+}
+
+.team-row {
+  border: none;
+}
+
+.team-row > td {
+  padding: 0 1.2rem 3rem;
+  vertical-align: top;
+}
+
+/* Card container */
+.team-card {
+  background: #f3f2f1;
+  border-radius: 0.8rem;
+  overflow: hidden;
+  box-shadow: 0 18px 40px -18px rgba(0, 0, 0, 0.22);
+  max-width: 450px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Top photo */
+.team-photo {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Text area */
+.team-body {
+  padding: 1.8rem 1.9rem 2.2rem;
+  font-family: var(--font-body);
+}
+
+/* Name */
+.team-name {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0 0 0.2rem;
+  color: #111;
+}
+
+/* Credentials */
+.team-title {
+  margin-top: -1.5rem;
+  font-size: 2rem;
+  font-weight: 500;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: #555;
+}
+
+.email {
+    font-size: 1.2rem !important;
+}
+
+/* Bio paragraphs */
+.team-bio {
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: #303030;
+  margin: 0 0 1rem;
+}
+
+/* last paragraph tighter bottom */
+.team-bio:last-of-type {
+  margin-bottom: 0;
+}
+
+/* Bio collapsible area */
+.team-bio-wrapper {
+  max-height: 220px;             /* adjust how much shows initially */
+  overflow: hidden;
+  position: relative;
+  transition: max-height .4s ease;
+}
+
+/* gradient fade at bottom */
+.team-bio-wrapper::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 70px;
+  background: linear-gradient(to bottom, transparent, #f3f2f1);
+}
+
+/* Expanded state */
+.team-bio-wrapper.expanded {
+  max-height: 10000px;
+}
+
+.team-bio-wrapper.expanded::after {
+  display: none;
+}
+
+/* Read more button */
+.bio-toggle {
+  margin-top: 1rem;
+  border: none;
+  background: transparent;
+  font-size: 0.95rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: #1f2d24;
+  border-top: 1px solid #1f2d24;
+  padding-top: .8rem;
+  transition: color .2s ease, letter-spacing .2s ease;
+}
+
+.bio-toggle:hover {
+  color: #36533b;
+  letter-spacing: .16em;
+}
+
+/* =============================
+   Responsive – stack cards
+   ============================= */
+
+@media (max-width: 900px) {
+  .team-row {
+    display: block;
+  }
+
+  .team-row > td {
+    display: block;
+    width: 100%;
+    padding: 0 0 2.4rem;
+  }
+
+  .team-card {
+    max-width: 480px;
+  }
+}
+
+@media (max-width: 600px) {
+  .team-card {
+    max-width: 100%;
+  }
+
+  .team-body {
+    padding: 1.6rem 1.4rem 2rem;
+  }
+
+  .team-name {
+    font-size: 1.5rem;
+  }
+}

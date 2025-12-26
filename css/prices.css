@@ -1,0 +1,207 @@
+.pricing-table {
+  border: none !important;
+  border-collapse: collapse;
+  background: linear-gradient(
+    135deg,
+    #f3ede6 0%,
+    #e2f0e5 40%,
+    #d3e6da 100%
+  );
+}
+
+.pricing-heading {
+  font-family: var(--font-heading, 'Cormorant Garamond', serif);
+  font-size: 5rem !important;
+  font-weight: 700;
+  color: #111;
+  text-align: center;
+  margin: 2.5rem 0 3rem;
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+  letter-spacing: 0.04em;
+}
+
+/* remove decorative underline from Session Prices heading */
+.pricing-heading::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -12px;
+  width: 110px;
+  height: 4px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #111, #4c6f52);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+  animation: underlinePulse 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes underlinePulse {
+  0% { width: 70px; opacity: .85; }
+  100% { width: 140px; opacity: 1; }
+}
+
+/* mobile tweak */
+@media (max-width: 600px) {
+  .pricing-heading {
+    font-size: 2.4rem;
+  }
+}
+
+/* row with cards */
+.pricing-row {
+  border: none !important;
+}
+
+.pricing-card-cell {
+  border: none !important;
+  padding: 3.2rem 2rem 4.2rem;
+  text-align: center;
+}
+
+/* card */
+.pricing-card {
+  position: relative;
+  background: radial-gradient(circle at top left, #ffffff 0, #f3faf5 55%, #e3f1e7 100%);
+  border-radius: 1.2rem;
+  box-shadow: 0 28px 90px -30px rgba(54, 83, 59, 0.6);
+  padding: 4.8rem 3.2rem 3.4rem;
+  max-width: 360px;
+  margin: 0 auto;
+  transition: transform 0.28s ease, box-shadow 0.28s ease, translate 0.28s ease;
+}
+
+/* Hover — adjust so it doesn't break stair illusion */
+.pricing-card:hover {
+  transform: translateY(-4px) scale(1.01);
+}
+
+/* coloured round number badge */
+.pricing-badge {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 94px;
+  height: 94px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 20%, #ffffff 0, #d6efe0 40%, #4c6f52 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #12201a;
+  box-shadow: 0 16px 40px -18px rgba(0, 0, 0, 0.55);
+}
+
+/* title + text */
+.pricing-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #12201a;
+  margin: 0 0 1.8rem;
+  line-height: 1.45;
+}
+
+.pricing-price {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #284533;
+  margin-bottom: 0.8rem;
+}
+
+.pricing-subtext {
+  font-size: 1.05rem;
+  color: #3b5242;
+  line-height: 1.7;
+  margin: 0.1rem 0;
+}
+
+/* subtle divider between price lines */
+.pricing-subtext + .pricing-subtext {
+  margin-top: 0.35rem;
+}
+
+/* ============================
+   RESPONSIVE
+   ============================ */
+
+@media (max-width: 960px) {
+  .pricing-heading {
+    font-size: 3rem;
+  }
+
+  .pricing-card-cell {
+    padding: 2.8rem 1.4rem 3.4rem;
+  }
+
+  .pricing-card {
+    max-width: 380px;
+  }
+}
+
+/* ============================
+   STACK PRICING CARDS ON SMALL SCREENS
+   ============================ */
+@media (max-width: 780px) {
+
+  /* make the row behave like block layout */
+  .pricing-row {
+    display: block;
+  }
+
+  /* each card cell becomes full width */
+  .pricing-card-cell {
+    display: block;
+    width: 100%;
+    padding: 2rem 1rem 2.4rem;
+  }
+
+  /* center cards & remove staircase effect */
+  .pricing-card {
+    max-width: 400px;
+    margin: 0 auto !important;
+    min-height: auto !important;
+  }
+}
+
+@media (max-width: 720px) {
+  .pricing-row {
+    display: block;
+  }
+
+  .pricing-card-cell {
+    display: block;
+    width: 100%;
+    padding: 2.4rem 1.4rem 2.8rem;
+  }
+
+  .pricing-card {
+    padding: 4.4rem 2.4rem 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .pricing-heading {
+    font-size: 2.4rem;
+  }
+
+  .pricing-card {
+    padding: 4rem 1.8rem 2.6rem;
+  }
+
+  .pricing-title {
+    font-size: 1.35rem;
+  }
+
+  .pricing-price {
+    font-size: 1.25rem;
+  }
+
+  .pricing-subtext {
+    font-size: 0.98rem;
+  }
+}
