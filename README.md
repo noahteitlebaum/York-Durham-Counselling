@@ -1,0 +1,2 @@
+# York-Durham-Counselling
+York Durham Counselling is a modern, client-focused mental health website offering compassionate virtual therapy services for individuals, families, and youth across the York and Durham regions. The site emphasizes accessibility, clarity, and trust through thoughtful design, easy navigation, and a welcoming user experience.
