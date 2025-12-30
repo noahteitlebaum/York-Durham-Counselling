@@ -1,6 +1,6 @@
 .team-heading {
   font-family: var(--font-heading, 'Cormorant Garamond', serif);
-  font-size: 5rem !important;
+  font-size: 5rem;
   font-weight: 700;
   color: #111;
   text-align: center;
@@ -30,13 +30,6 @@
 @keyframes underlinePulse {
   0% { width: 70px; opacity: .85; }
   100% { width: 140px; opacity: 1; }
-}
-
-/* mobile tweak */
-@media (max-width: 600px) {
-  .team-heading {
-    font-size: 2.4rem;
-  }
 }
 
 .team-table {
@@ -139,10 +132,6 @@
   max-height: 10000px;
 }
 
-.team-bio-wrapper.expanded::after {
-  display: none;
-}
-
 /* Read more button */
 .bio-toggle {
   margin-top: 1rem;
@@ -163,10 +152,6 @@
   letter-spacing: .16em;
 }
 
-/* =============================
-   Responsive – stack cards
-   ============================= */
-
 @media (max-width: 900px) {
   .team-row {
     display: block;
@@ -183,7 +168,13 @@
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 500px) {
+    .team-heading {
+    font-size: 4rem !important;
+  }
+}
+
+@media (max-width: 400px) {
   .team-card {
     max-width: 100%;
   }

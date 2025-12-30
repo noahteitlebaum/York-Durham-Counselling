@@ -125,10 +125,6 @@
   margin-top: 0.35rem;
 }
 
-/* ============================
-   RESPONSIVE
-   ============================ */
-
 @media (max-width: 960px) {
   .pricing-heading {
     font-size: 3rem;
@@ -143,24 +139,17 @@
   }
 }
 
-/* ============================
-   STACK PRICING CARDS ON SMALL SCREENS
-   ============================ */
 @media (max-width: 780px) {
-
-  /* make the row behave like block layout */
   .pricing-row {
     display: block;
   }
 
-  /* each card cell becomes full width */
   .pricing-card-cell {
     display: block;
     width: 100%;
     padding: 2rem 1rem 2.4rem;
   }
 
-  /* center cards & remove staircase effect */
   .pricing-card {
     max-width: 400px;
     margin: 0 auto !important;

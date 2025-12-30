@@ -1,148 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&display=swap');
+.home-title {
+  white-space: normal;
 
-:root {
-  --font-body: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-heading: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  font-size: 3.5rem;
+  margin-bottom: 1.3rem;
+  line-height: 1.15;
 
-  /* Greens & neutrals */
-  --color-bg: #f7f5f0;
-  --color-surface: #ffffff;
-  --color-surface-soft: #faf9f7;
-
-  --color-text: #12201a;
-  --color-text-muted: #5a6b5e;
-
-  --color-primary: #4c6f52;          /* core green */
-  --color-primary-dark: #36533b;     /* deep forest */
-  --color-primary-light: #7da889;    /* soft green */
-  --color-accent-mint: #d6efe0;      /* mint wash */
-  --color-accent-sage: #e4ece4;      /* pale sage */
-
-  --color-border-soft: rgba(18, 32, 26, 0.1);
-  --color-shadow-soft: rgba(63, 94, 72, 0.15);
-
-  --radius-lg: 1.2rem;
-  --radius-md: 0.9rem;
-  --radius-pill: 999px;
-
-  --transition-fast: 0.18s ease;
-  --transition-med: 0.28s ease;
-}
-
-/* ------------------------------------
-   2. Global Base Styles
--------------------------------------*/
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: var(--font-body);
-  background:
-    /* lighter wash so image shows more */
-    linear-gradient(180deg, rgba(255,255,255,0.78), rgba(247,251,248,0.82)),
-    url("../images/nature.jpg") center/cover no-repeat fixed;
-  color: var(--color-text);
-  line-height: 1.7;
-  margin: 0;
-  padding: 5rem 7vw;
-  overflow-x: hidden;
-  font-size: 1.075rem;
-  opacity: 0;
-  transition:
-    opacity 0.4s ease,
-    transform 0.4s ease;
-}
-
-/* when page has finished loading */
-body.page-enter {
-  opacity: 1;
-}
-
-/* when leaving the page */
-body.page-exit {
-  opacity: 0;
-}
-
-/* =============================
-   FLOATING BUBBLES SYSTEM
-   ============================= */
-
-.bubble-layer {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;       /* clickable page still works */
-  z-index: 25;                /* above tables & forms, below sidebar (yours is 50) */
-}
-
-/* Base bubble style */
-.bubble {
-  position: absolute;
-  background: url("../images/bubble.png") center/contain no-repeat;
-  opacity: 0.7;
-  animation: bubbleFloat linear infinite;
-  filter: drop-shadow(0 10px 25px rgba(0,0,0,.18));
-}
-
-/* Sizes */
-.bubble-small  { width: 90px;  height: 90px;  animation-duration: 18s; }
-.bubble-medium { width: 140px; height: 140px; animation-duration: 22s; }
-.bubble-large  { width: 200px; height: 200px; animation-duration: 28s; }
-
-/* Floating motion */
-@keyframes bubbleFloat {
-  0%   { transform: translateY(0) translateX(0) scale(1); }
-  50%  { transform: translateY(-45px) translateX(-20px) scale(1.04); }
-  100% { transform: translateY(0) translateX(20px) scale(1); }
-}
-
-/* =============================
-   Position Each Bubble
-   ============================= */
-.bubble-layer .bubble:nth-child(1) { top: 10%; left: 8%;  }
-.bubble-layer .bubble:nth-child(2) { top: 25%; right: 10%; }
-.bubble-layer .bubble:nth-child(3) { top: 55%; left: 18%; }
-.bubble-layer .bubble:nth-child(4) { top: 70%; right: 22%; }
-.bubble-layer .bubble:nth-child(5) { top: 82%; left: 60%; }
-.bubble-layer .bubble:nth-child(6) { top: 5%; right: 20%; }
-.bubble-layer .bubble:nth-child(7) { top: 40%; left: 5%; }
-.bubble-layer .bubble:nth-child(8) { top: 78%; right: 35%; }
-.bubble-layer .bubble:nth-child(9) { top: 30%; left: 75%; }
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--font-heading);
-  margin-top: 0;
-  color: var(--color-text);
-}
-
-/* Global heading “pop” styling */
-h1,
-.section-title {
-  white-space: nowrap;
-  font-size: 5rem !important;
   position: relative;
   letter-spacing: 0.04em;
-  font-weight: 800 !important;
+  font-weight: 800;
   background: linear-gradient(120deg, var(--color-primary-dark), var(--color-primary-light));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
-h1::after,
-.section-title::after {
+.home-title::after {
   content: "";
   position: absolute;
   left: 0;
@@ -154,237 +26,11 @@ h1::after,
   box-shadow: 0 6px 18px rgba(76, 111, 82, 0.35);
 }
 
-/* Tables (global) */
-table {
-  border-collapse: collapse;
-  width: 100%;
-}
-
-/* ------------------------------------
-   3. Sidebar Slide Menu
--------------------------------------*/
-.slide-menu {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 21vw;
-  min-width: 220px;
-  max-width: 340px;
-  background: linear-gradient(
-    180deg,
-    #fdfdfc 0%,
-    #f7faf8 35%,
-    #eef4f0 100%
-  );
-  box-shadow: 0 18px 50px rgba(29, 50, 36, 0.22);
-  z-index: 50;
-  display: flex;
-  flex-direction: column;
-  justify-content: stretch;
-  align-items: stretch;
-  padding: 0;
-  gap: 0;
-  transition: transform var(--transition-med);
-  transform: translateX(calc(-100% + 22px)); /* visible handle */
-}
-
-/* open state */
-.menu-open .slide-menu {
-  transform: translateX(0);
-}
-
-/* Arrow handle attached to sidebar */
-.slide-toggle {
-  position: absolute;
-  right: -90px;
-  width: 100px;
-  height: 100px;
-  border-radius: 0 var(--radius-pill) var(--radius-pill) 0;
-  background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary));
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.22);
-  transition:
-    transform var(--transition-fast),
-    box-shadow var(--transition-fast),
-    background var(--transition-fast);
-}
-
-.slide-toggle::before {
-  content: "";
-  display: block;
-
-  width: 35px;
-  height: 5px;
-  background: #ffffff;
-  border-radius: 2px;
-
-  transform-origin: center;
-  transition: transform var(--transition-med);
-
-  box-shadow: 
-    0 12px 0 #ffffff,
-    0 -12px 0 #ffffff;
-
-  animation: blinkBars 1.2s infinite ease-in-out;
-}
-
-.menu-open .slide-toggle::before {
-  animation: none !important;
-}
-
-@keyframes blinkBars {
-  0%, 100% { transform: scale(1); opacity: 1; }
-
-  50% { 
-      transform: scale(1.12); 
-      opacity: 0.25; 
-      background: #FFE600; 
-      box-shadow:
-        0 12px 0 #FFE600,
-        0 -12px 0 #FFE600;
-  }
-}
-
-.slide-toggle:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.26);
-}
-
-/* When menu is open: dim everything and block clicks outside sidebar */
-.menu-open {
-  overflow: hidden; /* page behind cannot scroll */
-}
-
-.menu-open::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.35); /* grey tint */
-  z-index: 40;                     /* between bubbles (25) and sidebar (50) */
-  pointer-events: auto;            /* eats clicks so content is unresponsive */
-}
-
-/* Sidebar nav items */
-.nav-option {
-  display: flex;
-  align-items: center;
-  padding: 0 2rem;
-  font-size: 1.05rem;
-  font-weight: 500;
-  cursor: pointer;
-  height: calc(100vh / 6);
-  color: var(--color-primary-dark);
-  border-bottom: 1px solid var(--color-border-soft);
-  background: rgba(255, 255, 255, 0.98);
-  transition:
-    background var(--transition-med),
-    color var(--transition-med),
-    padding-left var(--transition-med),
-    box-shadow var(--transition-fast),
-    transform var(--transition-fast);
-}
-
-.nav-option:hover {
-  background: linear-gradient(
-    90deg,
-    var(--color-primary-dark),
-    var(--color-primary)
-  );
-  color: #ffffff;
-  padding-left: 2.6rem;
-  box-shadow: inset 5px 0 0 rgba(214, 239, 224, 0.9);
-  transform: translateX(1px);
-}
-
-.chosen-option {
-  background: linear-gradient(
-    90deg,
-    var(--color-primary-dark),
-    var(--color-primary)
-  );
-  color: #ffffff;
-  padding-left: 2.6rem;
-  box-shadow: inset 5px 0 0 rgba(214, 239, 224, 0.9);
-  transform: translateX(1px);
-}
-
-/* ------------------------------------
-   4. Content Sections
--------------------------------------*/
-.section-table {
-  border: none !important;
-}
-
-/* soft alternating backgrounds with green tints */
-.section-table:nth-of-type(odd) {
-  background: linear-gradient(
-    135deg,
-    var(--color-accent-sage) 0%,
-    #f5f1ea 50%,
-    var(--color-accent-mint) 100%
-  );
-}
-
-.section-table:nth-of-type(even) {
-  background: var(--color-surface);
-}
-
-.section-row {
-  border: none !important;
-}
-
-.text-cell {
-  padding: 4.5rem 4.5rem;
-  border: none !important;
-  vertical-align: middle;
-}
-
-.image-cell {
-  padding: 3.5rem 4.5rem;
-  border: none !important;
-  vertical-align: middle;
-}
-
-.gap-fix {
-  margin-bottom: -5rem !important;
-}
-
-.section-title {
-  font-size: 2.9rem;
-  margin-bottom: 1.3rem;
-  line-height: 1.15;
-}
-
-.section-subtitle {
+.home-subtitle {
   font-size: 2rem;
   font-weight: 300;
   color: var(--color-text-muted);
   font-style: italic;
-}
-
-/* Section images */
-.section-image {
-  border-radius: var(--radius-lg);
-  box-shadow: 0 24px 70px -24px rgba(54, 83, 59, 0.4);
-  object-fit: cover;
-  max-width: 100%;
-  height: auto;
-  transition:
-    transform var(--transition-med),
-    box-shadow var(--transition-med),
-    filter var(--transition-med);
-}
-
-.section-image:hover {
-  transform: translateY(-5px) scale(1.01);
-  box-shadow: 0 32px 80px -28px rgba(54, 83, 59, 0.5);
-  filter: saturate(1.06);
 }
 
 .logo-image {
@@ -397,9 +43,6 @@ table {
   height: 400px;
 }
 
-/* ------------------------------------
-   5. Benefits List
--------------------------------------*/
 .benefits-list {
   list-style: none;
   padding-left: 0;
@@ -418,7 +61,6 @@ table {
   transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
 }
 
-/* subtle uplifting hover — professional, not loud */
 .benefits-list li:hover {
   transform: translateY(-2px);
   box-shadow: 0 16px 40px -20px rgba(54, 83, 59, 0.35);
@@ -438,441 +80,124 @@ table {
   font-weight: 600;
 }
 
-/* ------------------------------------
-   6. Contact & Info Card
--------------------------------------*/
-.icon-image {
-  width: 100px;
-  height: 100px;
-  display: block;
-  margin: 0 auto;
-  border-radius: 18px;                 /* soft rounding; remove if icons are already circular */
-  object-fit: contain;
-  background: rgba(255, 255, 255, 0.9);
-  padding: 10px;
-  box-shadow: 0 8px 22px rgba(54, 83, 59, 0.22);
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease,
-    background 0.2s ease,
-    opacity 0.2s ease;
-}
-
-.icon-image:hover {
-  transform: translateY(-3px) scale(1.06);
-  box-shadow: 0 14px 32px rgba(54, 83, 59, 0.35);
-  background: rgba(245, 249, 245, 0.98);
-  opacity: 0.97;
-}
-
-.contact-icons-row .icon-cell {
-  padding: 1.8rem 0;
-  text-align: center;
-  vertical-align: middle;
-  background: rgba(156, 204, 158, 0.5);
-}
-
-.contact-table {
-  overflow: hidden;
-  margin-top: 2rem;
-  transform: translateY(0.5rem);
-  transition:
-    transform var(--transition-med),
-    box-shadow var(--transition-med);
-  table-layout: fixed;
-  width: 85%;
-  margin: 50px auto 25px auto;
-  border-collapse: separate;
-  border-spacing: 0;
-  background: #ffffff;
-  border-radius: 18px;
-  padding: 35px 45px;
-  box-shadow: 0 28px 60px rgba(0,0,0,0.12);
-  border: 1px solid rgba(0,0,0,0.04);
-  position: relative;
-}
-
-.contact-table:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 22px 70px -24px rgba(54, 83, 59, 0.48);
-}
-
-/* Soft divider between columns */
-.contact-row td:first-child {
-  border-right: none;
-  position: relative;
-  padding-right: 40px;
-}
-
-.contact-row td:last-child {
-  padding-left: 40px;
-}
-
-.contact-row td:first-child::after {
-  content: "";
-  position: absolute;
-  right: 0;
-  top: 10px;
-  width: 1px;
-  height: calc(100% - 20px);
-  background: linear-gradient(to bottom, transparent, #cfd9d2, transparent);
-}
-
-/* Typography polish */
-.contact-heading {
-  font-family: 'Inter', sans-serif;
-  margin: 6px 0;
-  font-size: 1.1rem;
-  letter-spacing: 0.2px;
-  color: #2b3a33;
-}
-
-.hours-info .contact-heading:nth-child(1),
-.hours-info .contact-heading:nth-child(2),
-.hours-info .contact-heading:nth-child(3) {
-  font-weight: 600;
-}
-
-.hours-info .contact-heading:nth-child(4),
-.hours-info .contact-heading:nth-child(5) {
-  font-size: 1rem;
-  color: #6b7d71;
-  font-style: italic;
-}
-
-/* ------------------------------------
-   7. Contact Form Card
--------------------------------------*/
-.form-box {
-  background: radial-gradient(circle at top left, #f9fdf9 0, #ffffff 60%);
-  border-radius: var(--radius-lg);
-  box-shadow: 0 24px 70px -26px rgba(54, 83, 59, 0.5);
-  padding: 2.8rem 3.2rem;
-  margin-top: 2.2rem;
-  width: 100%;
-  max-width: 560px;
-  border: 1px solid rgba(76, 111, 82, 0.08);
-  transform: translateY(0);
-  transition:
-    transform var(--transition-med),
-    box-shadow var(--transition-med),
-    border-color var(--transition-med);
-}
-
-.form-box:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 30px 90px -32px rgba(54, 83, 59, 0.58);
-  border-color: rgba(76, 111, 82, 0.22);
-}
-
-/* Two-column form layout */
-.form-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2.2rem 3.2rem;
-}
-
-.form-field {
-  display: flex;
-  flex-direction: column;
-}
-
-.form-field.full {
-  grid-column: span 2;
-}
-
-.form-field label {
-  font-family: var(--font-body);
-  font-size: 0.95rem;
-  margin-bottom: 6px;
-  color: var(--color-primary-dark);
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-}
-
-/* Inputs – underline style */
-.form-field input {
-  border: none;
-  border-bottom: 1px solid rgba(18, 32, 26, 0.55);
-  background: transparent;
-  padding: 7px 0;
-  font-size: 1rem;
-  outline: none;
-  transition:
-    border-color var(--transition-fast),
-    box-shadow var(--transition-fast),
-    background var(--transition-fast),
-    transform var(--transition-fast);
-}
-
-.form-field input:focus {
-  border-bottom-color: var(--color-primary);
-  box-shadow: 0 5px 0 -3px rgba(76, 111, 82, 0.35);
-  background: #fbfdfb;
-  transform: translateY(-1px);
-}
-
-/* Textarea */
-.form-field textarea {
-  resize: none;
-  height: 160px;
-  padding: 12px 14px;
-  border-radius: 10px;
-  border: 1px solid rgba(18, 32, 26, 0.3);
-  background: var(--color-surface-soft);
-  outline: none;
-  font-size: 1rem;
-  line-height: 1.6;
-  transition:
-    border-color var(--transition-fast),
-    background var(--transition-fast),
-    box-shadow var(--transition-fast),
-    transform var(--transition-fast);
-}
-
-textarea {
-  font-family: "Inter", system-ui, sans-serif;   /* clean, readable */
-  font-size: 1.05rem;                            /* slightly larger */
-  line-height: 1.7;                               /* easier to read */
-  color: #1b3126;                                 /* deep green text */
-  padding: 1.2rem 1.3rem;                         /* breathing room */
-  
-  background: #ffffff;
-  border-radius: 14px;
-  border: 1px solid rgba(76, 111, 82, 0.35);
-  box-shadow: 0 12px 30px -12px rgba(54, 83, 59, .18);
-
-  transition: border .25s ease, box-shadow .25s ease;
-}
-
-textarea:focus {
-  border: 1px solid #36533b;
-  outline: none;
-  box-shadow: 0 18px 50px -18px rgba(54, 83, 59, .35);
-}
-
-/* Submit button */
-.submit-btn {
-  display: block;
-  margin: 2.4rem auto 0;
-  border: none;
-  border-top: 1px solid #1f2d24;
-  width: 48%;
-  padding: 12px 0;
-  background: transparent;
-  font-size: 0.98rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition:
-    letter-spacing var(--transition-fast),
-    background var(--transition-fast),
-    color var(--transition-fast),
-    box-shadow var(--transition-fast),
-    transform var(--transition-fast);
-}
-
-.submit-btn:hover {
-  letter-spacing: 0.22em;
-  background: linear-gradient(
-    120deg,
-    var(--color-primary-dark),
-    var(--color-primary-light)
-  );
-  color: #ffffff;
-  box-shadow: 0 18px 46px -20px rgba(54, 83, 59, 0.65);
-  transform: translateY(-2px);
-}
-
-/* ------------------------------------
-   8. Footer
--------------------------------------*/
-.footer-table {
-  background: linear-gradient(90deg, var(--color-primary-dark), var(--color-primary));
-  border: none !important;
-}
-
-.footer-row {
-  border: none !important;
-}
-
-.footer-text {
-  padding: 1.8rem;
-  font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.9);
-  border: none !important;
-  text-align: center;
-}
-
-/* ------------------------------------
-   9. Responsive Styles
--------------------------------------*/
-
-/* =========================================
-   FINAL RESPONSIVE MEDIA QUERIES (ALL-IN-ONE)
-   ========================================= */
-
-/* -------- up to 900px -------- */
-@media (max-width: 900px) {
-  body {
-    padding: 4.5rem 6vw;
-    font-size: 1.02rem;
-  }
-
-  .slide-menu {
-    width: 72vw;
-    transform: translateX(calc(-100% + 18px));
-  }
-
-  #slide-btn {
-    left: calc(72vw + 1rem);
-  }
-
-  .text-cell,
-  .image-cell {
-    display: block;
-    width: 100%;
-    padding: 3rem 2.2rem;
-  }
-
-  .section-title,
-  h1 {
-    font-size: 2.4rem;
-  }
-
-  .section-subtitle {
-    font-size: 1.15rem;
-  }
-
-  .form-grid {
-    grid-template-columns: 1fr;
-    gap: 1.7rem;
-  }
-
-  .form-field.full {
-    grid-column: span 1;
-  }
-
-  .submit-btn {
-    width: 100%;
-  }
-
-  .form-box {
-    padding: 2.2rem 1.9rem;
-    margin-top: 1.9rem;
-    max-width: 100%;
-  }
-
-  .contact-info {
-    border-right: none !important;
-    border-bottom: 1px solid rgba(76, 111, 82, 0.15) !important;
-  }
-
-  .section-table .section-row > .text-cell {
-    width: 100% !important;   /* overrides style="width: 59.0501%" */
-    display: block;
-  }
-
-  /* make the contact table itself fill that width */
-  .contact-table {
-    width: 100%;
-    margin: 0 auto 1.6rem;
-  }
-
-  /* keep icons nicely spread */
-  .contact-icons-row {
-    display: flex;
-  }
-
-  .contact-icons-row .icon-cell {
-    flex: 1 1 0;
-    padding: 1.2rem 0;
-  }
-
-  .icon-image {
-    width: 80%;
-    max-width: 90px;
-    height: auto;
+@media (max-width: 1325px) {
+  .home-subtitle {
+    font-size: 1.8rem;
   }
 }
 
-/* -------- up to 700px -------- */
-@media (max-width: 700px) {
-  body {
-    padding: 3.8rem 6vw;
-    background:
-      linear-gradient(180deg, rgba(255,255,255,0.78), rgba(247,251,248,0.82)),
-      url("../images/hero-nature.jpg") center/cover no-repeat;
+@media (max-width: 1212px) {
+  .home-subtitle {
+    font-size: 1.6rem;
   }
-
-  .slide-menu {
-    width: 80vw;
-  }
-
-  #slide-btn {
-    left: calc(80vw + 1rem);
-  }
-
-  .nav-option {
-    font-size: 0.95rem;
-    padding: 0 1.4rem;
-  }
-
-  .text-cell,
-  .image-cell {
-    padding: 2.4rem 1.8rem;
-  }
-
-  /* Bubble Responsiveness */
-  .bubble-small  { width: 60px;  height: 60px; }
-  .bubble-medium { width: 90px;  height: 90px; }
-  .bubble-large  { width: 120px; height: 120px; }
 }
 
-/* -------- up to 480px -------- */
-@media (max-width: 480px) {
-  body {
-    padding: 3.2rem 5vw;
+@media (max-width: 1110px) {
+  .home-title {
+    font-size: 3rem;
   }
 
-  .section-title,
-  h1 {
+  .home-subtitle {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 1000px) {
+  .home-title {
+    font-size: 2.8rem;
+  }
+
+  .home-subtitle {
+    font-size: 1.2rem;
+  } 
+}
+
+@media (max-width: 940px) {
+  .home-title {
+    font-size: 2.6rem;
+  }
+
+  .benefits-list {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 889px) {
+  .home-title {
+    font-size: 3.3rem;
+    text-align: center;
+  }
+
+  .home-title::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .home-subtitle {
     font-size: 2rem;
+    margin-bottom: -5rem;
+    text-align: center;
   }
 
-  .section-subtitle {
-    font-size: 1rem;
+  .logo-image,
+  .water-drop {
+    width: 500px;
+    height: auto;
+    margin-top: 1.5rem;
   }
 
-  .section-image {
-    border-radius: 1rem;
+  .section-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
-  .form-box {
-    padding: 2rem 1.6rem;
+  .section-row td {
+    width: 100% !important;
+    text-align: center;
   }
 
-  .contact-info,
-  .hours-info {
-    padding: 1.5rem 1.6rem;
+  .section-table:nth-of-type(1) .image-cell {
+    order: 2;
   }
 
-  /* slightly tone down bubbles on very small phones */
-  .bubble-layer {
-    opacity: 0.4;
+  .section-table:nth-of-type(1) .text-cell {
+    order: 1;
+  }
+
+  .section-table:nth-of-type(2) .image-cell {
+    order: 1;
+  }
+
+  .section-table:nth-of-type(2) .text-cell {
+    order: 2;
   }
 }
 
-/* ---- Global heading responsiveness override ---- */
-h1,
-.section-title {
-  white-space: normal;
-  font-size: clamp(2.2rem, 4vw, 3.6rem);
+@media (max-width: 700px) {
+  .logo-image,
+  .water-drop {
+    height: 300px !important;
+    width: auto;
+  }
 }
 
-/* ---- Image safety so nothing breaks ---- */
-.logo-image,
-.water-drop {
-  max-width: 100%;
-  height: auto;
+@media (max-width: 600px) {
+  .home-title {
+    font-size: 2.9rem;
+  }
+
+  .home-subtitle {
+    font-size: 1.6rem;;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-title {
+    font-size: 2.5rem;
+  }
+
+  .home-subtitle {
+    font-size: 1.3rem;;
+  }
 }

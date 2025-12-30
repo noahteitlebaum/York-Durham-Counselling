@@ -1,6 +1,7 @@
 .services-heading {
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: 5rem !important;
+  color: #111;
+  font-size: 5rem;
   font-weight: 700;
   text-align: center;
   margin-top: 40px;
@@ -19,12 +20,19 @@
   content: "";
   position: absolute;
   left: 50%;
-  bottom: -14px;
-  width: 300px;
-  height: 3px;
-  background: #1f2d24;
-  transform: translateX(-50%) scaleX(1);
-  border-radius: 2px;
+  transform: translateX(-50%);
+  bottom: -12px;
+  width: 110px;
+  height: 4px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #111, #4c6f52);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+  animation: underlinePulse 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes underlinePulse {
+  0% { width: 70px; opacity: .85; }
+  100% { width: 140px; opacity: 1; }
 }
 
 /* Card + image */
@@ -91,20 +99,46 @@
   font-size: 0.96rem;
   line-height: 1.8;
   color: #222222;
+  background-color: lightblue;
+  border-radius: 16px; /* adjust roundness */
+  padding: 10px;
+
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+  box-shadow:
+    0 4px 10px rgba(0, 0, 0, 0.08),
+    0 12px 32px rgba(0, 0, 0, 0.12);
+}
+
+.service-text:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 8px 20px rgba(0, 120, 255, 0.25),
+    0 18px 40px rgba(0, 120, 255, 0.35);
 }
 
 /* Optional: stack on small screens */
-@media (max-width: 900px) {
-    .fix {
-        margin-top: 0 !important;
-    }
+@media (max-width: 1000px) {
+  .fix {
+      margin-top: 0 !important;
+  }
 
   .services-table {
     border-spacing: 0 40px;
+    width: 100%;
   }
 
   .services-table tr {
     display: block;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto;
+    gap: 2.4rem 2.4rem;   /* row gap | column gap */
+  }
+
+  .services-table td {
+    width: 100%;
+    display: block;
+    padding: 2rem;
   }
 
   .service-cell {
@@ -114,5 +148,18 @@
 
   .service-card {
     max-width: 360px;
+  }
+}
+
+@media (max-width: 600px) {
+  .services-table tr {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem 1rem !important;
+  }
+}
+
+@media (max-width: 500px) {
+    .services-heading {
+    font-size: 4rem !important;
   }
 }

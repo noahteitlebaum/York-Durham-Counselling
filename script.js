@@ -1,12 +1,54 @@
 document.addEventListener("DOMContentLoaded", function() {
-  const toggle = document.querySelector(".slide-toggle");
+  let width = document.documentElement.clientWidth;
 
-  let open = false;
+  if (width <= 900) {
+    const toggle = document.querySelector(".slide-toggle");
+    const menu = document.querySelector(".menu-slide");
 
-  toggle.addEventListener("click", function() {
-    open = !open;
-    document.body.classList.toggle("menu-open");
-  });
+    let open = false;
+
+    toggle.addEventListener("click", function () {
+        if (open) {
+          document.body.classList.remove("open");
+          menu.classList.remove("open");
+          open = false;
+        }
+        else {
+          document.body.classList.add("open");
+          menu.classList.add("open");
+          open = true;
+        }
+    });
+  }
+  else {
+    const nav = document.querySelector(".menu");
+    nav.classList.add("nav-visible");
+
+    let lastScrollY = window.scrollY;
+
+    window.addEventListener("scroll", function() {
+      const currentY = window.scrollY;
+
+      if (currentY <= 0) {
+        nav.classList.remove("nav-hidden");
+        nav.classList.add("nav-visible");
+      } else if (currentY > lastScrollY + 2) {
+        nav.classList.add("nav-hidden");
+        nav.classList.remove("nav-visible");
+      } else if (currentY < lastScrollY - 2) {
+        nav.classList.remove("nav-hidden");
+        nav.classList.add("nav-visible");
+      }
+
+      lastScrollY = currentY;
+    });
+  }
+
+  const media = window.matchMedia("(max-width: 900px)");
+
+  media.addEventListener("change", function () {
+    location.reload();
+  });  
 });
 
 document.addEventListener('DOMContentLoaded', function () {

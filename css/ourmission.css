@@ -66,7 +66,6 @@
   font-weight: 600;
   margin: 0 0 1.4rem;
   letter-spacing: 0.04em;
-  color: #111;
   position: relative;
   display: inline-block;
 }
@@ -90,8 +89,6 @@
   100% { width: 150px; opacity: 1;    }
 }
 
-
-/* text underneath – bigger and comfy */
 .mission-intro {
   font-size: 2rem;
   margin: 1.6rem 0 0.8rem;
@@ -100,6 +97,10 @@
 
 .mission-quote {
   margin-top: -1.5rem;
+  font-size: 2rem;
+  font-weight: 300;
+  color: var(--color-text-muted);
+  font-style: italic;
 }
 
 .mission-body {
@@ -140,10 +141,6 @@
   transition: transform 0.28s ease, box-shadow 0.28s ease;
 }
 
-/* =========================================
-   WHY CHOOSE US SECTION
-   ========================================= */
-
 .choose-table {
   border: none !important;
   overflow: hidden;
@@ -173,8 +170,6 @@
   opacity: .8;
 }
 
-/* ---------- HEADER ---------- */
-
 .choose-heading {
   font-family: var(--font-heading, 'Cormorant Garamond', serif);
   font-size: 3rem;
@@ -203,8 +198,6 @@
   0% { width: 110px; opacity: .9; }
   100% { width: 200px; opacity: 1; }
 }
-
-/* ---------- FEATURE LIST ---------- */
 
 .choose-points-table {
   border: none;
@@ -241,8 +234,6 @@
   box-shadow: 0 30px 80px -30px rgba(54,83,59,.65);
 }
 
-/* ---------- TEXT ---------- */
-
 .choose-title {
   font-size: 1.5rem;
   font-weight: 600;
@@ -258,127 +249,120 @@
   margin: 0;
 }
 
-/* ---------- RESPONSIVE ---------- */
-
-@media (max-width: 800px) {
-  .choose-text-cell {
-    padding: 3rem 2rem;
-  }
-
-  .choose-heading {
-    font-size: 2.4rem;
-  }
-
-  .choose-title {
-    font-size: 1.3rem;
-  }
-
-  .choose-body {
-    font-size: 1rem;
+@media (max-width: 1200px) {
+  .mission-intro,
+  .mission-quote {
+    font-size: 1.8rem;
   }
 }
 
-@media (max-width: 520px) {
-  .choose-text-cell {
-    padding: 2.2rem 1.4rem;
-  }
-
-  .choose-heading {
-    font-size: 2rem;
+@media (max-width: 1100px) {
+  .mission-intro,
+  .mission-quote {
+    font-size: 1.6rem;
   }
 }
 
-@media (max-width: 960px) {
+@media (max-width: 1000px) {
+  .mission-intro,
+  .mission-quote {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 900px) {
+  body {
+    margin-top: -13rem !important;
+  }
+
+  .fix-gap {
+    margin-top: 4rem;
+  }
+
   .mission-text-cell,
   .mission-image-cell {
     padding: 2.8rem 2.2rem;
   }
 
   .mission-heading {
-    font-size: 2.4rem;
-  }
-
-  .mission-inner {
-    padding: 2.1rem 2rem;
+    font-size: 3.8rem;
   }
 }
 
-@media (max-width: 780px) {
-  .mission-row {
-    display: block;
+@media (max-width: 800px) {
+  .mission-intro,
+  .mission-quote {
+    font-size: 1.3rem;
   }
 
+  .choose-text-cell {
+    padding: 3rem 2rem;
+  }
+}
+
+@media (max-width: 767px) {
   .mission-text-cell,
   .mission-image-cell {
     display: block;
     width: 100%;
-    padding: 2.4rem 1.8rem;
   }
 
   .mission-image-cell {
     padding-top: 0;
-    text-align: center;
   }
 
-  .mission-inner {
-    padding: 2rem 1.6rem;
-  }
-
-  .mission-heading {
-    font-size: 2.2rem;
+  /* Make image wider */
+  .mission-image {
+    width: 100vw !important;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   /* Make intro + quote bigger */
   .mission-intro {
     font-size: 1.7rem;
-    line-height: 1.35;
   }
 
   .mission-quote {
     font-size: 1.5rem;
-    line-height: 1.4;
-    margin-top: 0.5rem;
     color: #1f2d24;
   }
 
-  /* Make image wider */
-  .mission-image {
-    width: 95vw;
-    max-width: 620px;
-    height: auto;
-    aspect-ratio: 4 / 3;
-    object-fit: cover;
+  .choose-heading {
+    line-height: 1.2;
   }
 }
 
-@media (max-width: 520px) {
-  .mission-text-cell,
-  .mission-image-cell {
-    padding: 2rem 1.2rem;
-  }
-
-  .mission-inner {
-    padding: 1.8rem 1.3rem;
+@media (max-width: 550px) {
+  .mission-intro,
+  .mission-quote {
+    font-size: 1.3rem;
   }
 
   .mission-heading {
-    font-size: 2rem;
+    font-size: 3rem;
   }
 
-  .mission-heading::after {
-    width: 90px;
+  .choose-heading {
+    font-size: 2.2rem;
   }
 
-  .mission-intro {
-    font-size: 1.7rem;
+  .mission-body,
+  .choose-body {
+    font-size: 0.9rem;
   }
+}
 
+@media (max-width: 453px) {
+  .mission-intro,
   .mission-quote {
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
 
-  .mission-image {
-    width: 100vw;
-    max-width: none;
+  .mission-body,
+  .choose-body {
+    font-size: 0.7rem;
   }
 }
