@@ -145,6 +145,32 @@
   margin-top: 16px;
 }
 
+.visit-link {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #5a8a8d; /* A calm, professional teal/blue */
+    color: #ffffff !important; /* Ensure text is white */
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-align: center;
+}
+
+/* Hover state: gets slightly darker and lifts up */
+.visit-link:hover {
+    background-color: #466b6e;
+    transform: translateY(-2px);
+    text-decoration: none;
+}
+
+/* Active state: "sinks" when clicked */
+.visit-link:active {
+    transform: translateY(0);
+}
+
 @media (max-width: 1120px) {
   .mh-resource-title {
     line-height: 1.2;
