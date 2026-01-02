@@ -211,6 +211,12 @@ h6 {
   color: #ffffff;
 }
 
+
+.chosen-option-text {
+  color: #ffffff;
+  text-decoration: none;
+}
+
 body {
   padding-top: 180px;      /* Gap fix between menu and content */
 }
@@ -751,15 +757,9 @@ textarea:focus {
       #eef4f0 100%
     );
     box-shadow: 0 18px 50px rgba(29, 50, 36, 0.22);
-    z-index: 50;
 
     display: flex;
     flex-direction: column;
-    align-items: stretch;
-    justify-content: stretch;
-    
-    padding: 0;
-    gap: 0;
     
     transform: translateX(calc(-100% + 22px)); /* visible handle */
     transition: transform var(--transition-med);
@@ -784,22 +784,27 @@ textarea:focus {
 
   .slide-toggle {
     position: absolute;
-    right: -60px;
+    left: 250px;
+    top: 50%;
+    transform: translate(-50%, -50%);
     width: 70px;
     height: 70px;
-    border-radius: 0 var(--radius-pill) var(--radius-pill) 0;
-    background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary));
+
+    background: linear-gradient(
+      135deg,
+      var(--color-primary-dark),
+      var(--color-primary)
+    );
+
+    border-radius: 0 40px 40px 0;
     border: none;
-    padding: 0;
     cursor: pointer;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.22);
-    transition:
-      transform var(--transition-fast),
-      box-shadow var(--transition-fast),
-      background var(--transition-fast);
+
+    box-shadow: 10px 0 26px rgba(0, 0, 0, 0.22);
   }
 
   .slide-toggle::before {
@@ -835,8 +840,12 @@ textarea:focus {
   }
 
   .slide-toggle:hover {
-    transform: translateY(-1px);
+    transform: translate(-50%, calc(-50% - 1px));
     box-shadow: 0 14px 32px rgba(0, 0, 0, 0.26);
+  }
+
+  .nav-option.chosen-option {
+    overflow: visible;
   }
 
   .nav-option {
