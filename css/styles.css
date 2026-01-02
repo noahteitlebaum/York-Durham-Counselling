@@ -507,7 +507,6 @@ textarea {
   font-size: 1.05rem;                            /* slightly larger */
   line-height: 1.7;                               /* easier to read */
   color: #1b3126;                                 /* deep green text */
-  padding: 1.2rem 1.3rem;                         /* breathing room */
   
   background: #ffffff;
   border-radius: 14px;
@@ -552,7 +551,38 @@ textarea:focus {
   );
   color: #ffffff;
   box-shadow: 0 18px 46px -20px rgba(54, 83, 59, 0.65);
-  transform: translateY(-2px);
+  transform: translateY(-5px);
+}
+
+/* The container must be relative for the child to be absolute */
+.form-box {
+    position: relative;
+}
+
+.thank-you-message {
+    /* Position it exactly over the form */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centers it perfectly */
+    z-index: 10; /* Keeps it on top of inputs */
+    
+    width: 110%;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    text-align: center;
+    border: 2px solid #4CAF50;
+    
+    /* Hidden state */
+    display: none; 
+    opacity: 1;
+}
+
+.thank-you-message.appear {
+    /* Make appear */
+    display: block;
 }
 
 /* Footer */

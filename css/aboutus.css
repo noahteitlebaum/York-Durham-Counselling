@@ -105,7 +105,7 @@
 
 /* last paragraph tighter bottom */
 .team-bio:last-of-type {
-  margin-bottom: 0;
+  margin-bottom: 1rem;
 }
 
 /* Bio collapsible area */
@@ -130,6 +130,10 @@
 /* Expanded state */
 .team-bio-wrapper.expanded {
   max-height: 10000px;
+}
+
+.team-bio-wrapper.expanded::after {
+  background: none;
 }
 
 /* Read more button */

@@ -67,7 +67,15 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 
-function fadeTo(href) {
+function fadeTo(href, wait) {
+  if (wait) {
+    setTimeout(function () { 
+      fadeTo(href, false); 
+    }, 3000);
+
+    return;
+  }
+
   document.body.classList.remove('page-enter');
   document.body.classList.add('page-exit');
 
@@ -80,6 +88,7 @@ document.addEventListener('DOMContentLoaded', function () {
   emailjs.init('TXY_PQmxUy6C65tpx');
 
   const form = document.getElementById('bookingForm');
+  const thankYouMessage = document.querySelector('.thank-you-message');
 
   form.addEventListener('submit', function (e) {
     e.preventDefault();
@@ -96,8 +105,8 @@ document.addEventListener('DOMContentLoaded', function () {
       .send('service_jlq9x4n', 'template_469gogd', bookingInfo)
       .then(function () {
         console.log('Message sent successfully!');
-        form.reset();
-        fadeTo(window.location.pathname);
+        thankYouMessage.classList.add("appear");
+        fadeTo(window.location.pathname, true);
       })
       .catch(function (err) {
         console.log('EmailJS error:', err);
@@ -115,7 +124,7 @@ document.addEventListener('DOMContentLoaded', function () {
       let href = link.getAttribute('href');
 
       e.preventDefault();
-      fadeTo(href)
+      fadeTo(href, false);
     });
   }
 });
