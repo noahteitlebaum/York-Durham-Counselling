@@ -10,11 +10,6 @@
   display: inline-block;
 }
 
-/* container trick to center */
-.services-heading-wrapper {
-  text-align: center;
-}
-
 /* centered underline */
 .services-heading::after {
   content: "";
@@ -28,6 +23,32 @@
   background: linear-gradient(90deg, #111, #4c6f52);
   box-shadow: 0 8px 24px rgba(0,0,0,0.25);
   animation: underlinePulse 2.5s ease-in-out infinite alternate;
+}
+
+/* container trick to center */
+.services-heading-wrapper {
+  text-align: center;
+}
+
+.services-subheading {
+    display: inline-block;
+    background-color: #3da889;    /* Solid white background */
+    color: #444444;               /* Neutral dark grey text */
+    font-size: 1.5rem;            /* Large but not overwhelming */
+    font-weight: 700;             /* Bold text */
+    padding: 12px 35px;           /* Padding creates the badge shape */
+    border-radius: 50px;          /* Perfectly circular edges */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    border: 1px solid #eeeeee;
+}
+
+.services-subheading-wrapper {
+    text-align: center;
+    margin-top: -10px;
+    margin-bottom: 30px;
 }
 
 @keyframes underlinePulse {
@@ -152,7 +173,8 @@
 }
 
 @media (max-width: 900px) {
-  .services-heading {
+  .services-heading,
+  .services-subheading {
     margin-left: 1.5rem;
   }
 }
