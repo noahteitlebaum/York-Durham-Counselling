@@ -77,6 +77,7 @@
     box-shadow 0.25s ease,
     border-color 0.25s ease,
     background 0.25s ease;
+  height: 400px;
 }
 
 .mh-resource-card:hover {
@@ -177,7 +178,11 @@
   }
 
   .mh-resource-card {
-    height: 420px;
+    height: 400px;
+  }
+
+  .mh-resource-text {
+    font-size: 0.8rem;
   }
 }
 
@@ -191,10 +196,7 @@
   .mh-resource-text {
     font-size: 0.9rem !important;
   }
-}
 
-/* Simple responsiveness */
-@media (max-width: 720px) {
   .mh-resource-table {
     border-spacing: 0 24px;
   }
@@ -211,7 +213,7 @@
 
   .mh-resource-card {
     max-width: 420px;
-    height: 350px;
+    height: 380px;
     margin: 0 auto;
   }
 }
