@@ -157,6 +157,10 @@
 }
 
 @media (max-width: 900px) {
+  .team-heading {
+    margin-left: 1.5rem;
+  }
+
   .team-row {
     display: block;
   }

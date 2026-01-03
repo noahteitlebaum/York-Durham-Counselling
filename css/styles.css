@@ -211,10 +211,8 @@ h6 {
   color: #ffffff;
 }
 
-
-.chosen-option-text {
-  color: #ffffff;
-  text-decoration: none;
+.toggle-position {
+  width: calc(100% / 6);
 }
 
 body {
@@ -844,10 +842,6 @@ textarea:focus {
     box-shadow: 0 14px 32px rgba(0, 0, 0, 0.26);
   }
 
-  .nav-option.chosen-option {
-    overflow: visible;
-  }
-
   .nav-option {
     display: flex;
     align-items: center;
@@ -855,7 +849,7 @@ textarea:focus {
     font-size: 0.85rem;
     font-weight: 500;
     cursor: pointer;
-    height: calc(100vh / 6);
+    height: calc(100vh / 6) !important;
     color: var(--color-primary-dark);
     border-bottom: 1px solid var(--color-border-soft);
     background: rgba(255, 255, 255, 0.98);
@@ -889,6 +883,12 @@ textarea:focus {
     padding-left: 2.6rem;
     box-shadow: inset 5px 0 0 rgba(214, 239, 224, 0.9);
     transform: translateX(1px);
+    height: calc(100vh / 6);
+  }
+
+  .toggle-position {
+    position: relative;
+    width: 100%;
   }
 }
 

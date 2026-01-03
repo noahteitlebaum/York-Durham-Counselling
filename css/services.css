@@ -151,6 +151,12 @@
   }
 }
 
+@media (max-width: 900px) {
+  .services-heading {
+    margin-left: 1.5rem;
+  }
+}
+
 @media (max-width: 600px) {
   .services-table tr {
     grid-template-columns: repeat(1, 1fr);
