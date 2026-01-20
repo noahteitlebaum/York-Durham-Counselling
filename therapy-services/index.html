@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <meta name="description" content="View session rates for York Durham Counselling. Transparent pricing for individual therapy, family counselling, and CBT programs in Thornhill, ON.">
-    <meta name="keywords" content="Therapy prices Thornhill, counselling rates Ontario, affordable therapy, individual counselling cost">
+    <meta name="description" content="Explore our therapy services in Thornhill, ON. We specialize in Individual Therapy, Family Counselling, Child and Adolescent support, and CBT groups.">
+    <meta name="keywords" content="Individual Therapy Thornhill, Family Counselling Ontario, CBT Groups, Child Therapy, Adolescent Counselling">
 
-    <link rel="icon" href="images/YD-icon.png">
+    <link rel="icon" href="../images/YD-icon.png">
 
-    <title>Session Prices | York Durham Counselling</title>
-    <link rel="stylesheet" href="css/prices.css"/>
-    <link rel="stylesheet" href="css/styles.css"/>
+    <title>Therapy Services | York Durham Counselling</title>
+    <link rel="stylesheet" href="therapy-services.css"/>
+    <link rel="stylesheet" href="../styles.css"/>
 
     <script type="application/ld+json">
     {
@@ -29,26 +29,16 @@
         "addressCountry": "CA"
       },
       "telephone": "+1-289-588-3559",
-      "makesOffer": [
-        {
-          "@type": "Offer",
-          "itemOffered": { "@type": "Service", "name": "Individual Therapy" },
-          "price": "165.00",
-          "priceCurrency": "CAD"
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": { "@type": "Service", "name": "Family Counselling" },
-          "price": "190.00",
-          "priceCurrency": "CAD"
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": { "@type": "Service", "name": "Cognitive Behavioural Therapy" },
-          "price": "165.00",
-          "priceCurrency": "CAD"
-        }
-      ]
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Therapy Services",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Individual Therapy" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Family Therapy" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Child and Adolescent Therapy" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Cognitive Behavioural Therapy (CBT)" } }
+        ]
+      }
     }
     </script>
 </head>
@@ -66,52 +56,81 @@
     </div>
 
     <div class="menu menu-slide">
-        <a class="nav-option" href="index.html">Home</a>
-        <a class="nav-option" href="ourmission.html">Our Mission</a>
-        <a class="nav-option" href="aboutus.html">About Us</a>
-        <a class="nav-option" href="services.html">Therapy Services</a>
-        <a class="nav-option" href="resources.html">Mental Health Resources</a>
+        <a class="nav-option" href="../index.html">Home</a>
+        <a class="nav-option" href="../our-mission/index.html">Our Mission</a>
+        <a class="nav-option" href="../about-us/index.html">About Us</a>
 
         <div class="toggle-position">
-            <a class="nav-option chosen-option" href="prices.html">Session Prices</a>
+            <a class="nav-option chosen-option" href="../therapy-services/index.html">Therapy Services</a>
             <div class="slide-toggle" type="button"></div>
         </div>
+
+        <a class="nav-option" href="../mental-health-resources/index.html">Mental Health Resources</a>
+        <a class="nav-option" href="../session-prices/index.html">Session Prices</a>
     </div>
 
-    <h1 class="pricing-heading">Session Prices</h1>
+    <div class="services-heading-wrapper">
+        <h1 class="services-heading">Therapy Services</h1>
+    </div>
 
-    <table class="section-table pricing-table" width="100%" cellpadding="0" cellspacing="0">
-    <tbody>
-        <tr class="pricing-row">
-            <td class="pricing-card-cell">
-                <div class="pricing-card">
-                    <div class="pricing-badge">1</div>
-                    <h3 class="pricing-title">Individual Therapy Session</h3>
-                    <div class="pricing-price">$165</div>
-                    <div class="pricing-subtext">50 Minute Session</div>
-                </div>
-            </td>
+    <div class="services-subheading-wrapper">
+        <p class="services-subheading">*All Sessions are Online*</p>
+    </div>
 
-             <td class="pricing-card-cell">
-                <div class="pricing-card">
-                    <div class="pricing-badge">2</div>
-                    <h3 class="pricing-title">Cognitive Behavioural Therapy Program</h3>
-                    <div class="pricing-price">$165 per 50 minute session</div>
-                    <div class="pricing-subtext">or</div>
-                    <div class="pricing-subtext">$1500 for block of 10 sessions</div>
+    <table class="section-table services-table">
+    <tr>
+        <td class="service-cell">
+            <div class="service-card">
+                <div class="service-img-wrap">
+                    <img class="section-image service-img" src="../images/individual-therapy.jpg" alt="Individual Therapy">
+                    <div class="service-label">
+                        <span class="service-title">Individual Therapy</span>
+                    </div>
                 </div>
-            </td>
 
-            <td class="pricing-card-cell">
-                <div class="pricing-card">
-                    <div class="pricing-badge">3</div>
-                    <h3 class="pricing-title">Family Counselling Session</h3>
-                    <div class="pricing-price">$190</div>
-                    <div class="pricing-subtext">1 hour session</div>
+                <p class="service-text">At York Durham Counselling, we provide individual therapy to address a wide range of mental health difficulties. Our approach is tailored to meet the unique needs of each client, creating a safe and supportive space for personal growth and healing.</p>
+            </div>
+        </td>
+
+        <td class="service-cell">
+            <div class="service-card">
+                <div class="service-img-wrap">
+                    <img class="section-image service-img" src="../images/family-therapy.jpg" alt="Family Therapy">
+                    <div class="service-label">
+                        <span class="service-title">Family Therapy</span>
+                    </div>
                 </div>
-            </td>
-        </tr>
-    </tbody>
+
+                <p class="service-text">Family therapy is an essential part of our practice, aimed at enhancing familial relationships and addressing issues that impact the family unit as a whole. We work collaboratively with families to foster understanding and promote positive change.</p>
+            </div>
+        </td>
+
+        <td class="service-cell">
+            <div class="service-card">
+                <div class="service-img-wrap">
+                    <img class="section-image service-img" src="../images/child-adolescent-therapy.jpg" alt="Child and Adolescent Therapy">
+                    <div class="service-label">
+                        <span class="service-title">Child and Adolescent Therapy</span>
+                    </div>
+                </div>
+
+                <p class="service-text">We specialize in providing comprehensive mental health support for children and adolescents, addressing their unique emotional and behavioral needs. Our approach is compassionate, empathetic, and tailored to the developmental stage of each young client.</p>
+            </div>
+        </td>
+
+        <td class="service-cell">
+            <div class="service-card">
+                <div class="service-img-wrap">
+                    <img class="section-image service-img fix" src="../images/cbt.jpg" alt="Cognitive Behavioral Therapy">
+                    <div class="service-label">
+                        <span class="service-title">Cognitive Behavioural Therapy (CBT) Groups</span>
+                    </div>
+                </div>
+
+                <p class="service-text">For more information please contact Kim via email: <a href="aboutus.html">Click Here</a></p>
+            </div>
+        </td>
+    </tr>
     </table>
 
     <table class="section-table">
@@ -148,17 +167,17 @@
                             <tr class="contact-icons-row">
                                 <td class="contact-info icon-cell">
                                     <a href="mailto:yorkdurhamcounselling@gmail.com" target="_blank">
-                                        <img class="icon-image" src="images/email-icon.png" alt="Email">
+                                        <img class="icon-image" src="../images/email-icon.png" alt="Email">
                                     </a>
                                 </td>
                                 <td class="contact-info icon-cell">
                                     <a href="https://www.instagram.com/yorkdurhamcounselling/" target="_blank">
-                                        <img class="icon-image" src="images/instagram-icon.png" alt="Instagram">
+                                        <img class="icon-image" src="../images/instagram-icon.png" alt="Instagram">
                                     </a>
                                 </td>
                                 <td class="contact-info icon-cell">
                                     <a href="https://www.facebook.com/profile.php?id=61573411048420" target="_blank"> 
-                                        <img class="icon-image" src="images/facebook-icon.png" alt="Facebook">
+                                        <img class="icon-image" src="../images/facebook-icon.png" alt="Facebook">
                                     </a>
                                 </td>
                             </tr>
@@ -191,7 +210,7 @@
                                     <input type="text" id="subject" name="subject"></div>
                                 <div class="form-field full">
                                     <label for="message">Message</label>
-                                    <textarea id="message" name="message"></textarea>
+                                    <textarea id="message" name="message" rows="3"></textarea>
                                 </div>
                             </div>
                             <button class="submit-btn" type="submit">Submit</button>
@@ -211,6 +230,6 @@
     </table>
 
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script src="script.js"></script>
+    <script src="../script.js"></script>
 </body>
 </html>
