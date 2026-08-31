@@ -89,9 +89,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const form = document.getElementById('bookingForm');
   const thankYouMessage = document.querySelector('.thank-you-message');
+  const submitButton = form.querySelector('button[type="submit"]');
+
+  let isSubmitting = false;
 
   form.addEventListener('submit', function (e) {
     e.preventDefault();
+
+    if (isSubmitting) {
+      return;
+    }
+
+    isSubmitting = true;
+    submitButton.disabled = true;
 
     const bookingInfo = {
       firstName: form.firstName.value,
@@ -110,6 +120,9 @@ document.addEventListener('DOMContentLoaded', function () {
       })
       .catch(function (err) {
         console.log('EmailJS error:', err);
+
+        isSubmitting = false;
+        submitButton.disabled = false;
       });
   });
 });

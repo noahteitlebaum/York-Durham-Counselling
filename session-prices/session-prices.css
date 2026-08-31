@@ -10,8 +10,8 @@
 }
 
 .pricing-heading {
-  font-family: var(--font-heading, 'Cormorant Garamond', serif);
-  font-size: 5rem !important;
+  font-family: var(--font-heading);
+  font-size: 3.2rem !important;
   font-weight: 700;
   color: #111;
   text-align: center;
@@ -46,7 +46,7 @@
 /* mobile tweak */
 @media (max-width: 600px) {
   .pricing-heading {
-    font-size: 2.4rem;
+    font-size: 2rem;
   }
 }
 
@@ -99,7 +99,7 @@
 
 /* title + text */
 .pricing-title {
-  font-size: 1.8rem;
+  font-size: 1.3rem;
   font-weight: 600;
   color: #12201a;
   margin: 0 0 1.8rem;
@@ -107,7 +107,7 @@
 }
 
 .pricing-price {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: 600;
   color: #284533;
   margin-bottom: 0.8rem;
@@ -127,7 +127,7 @@
 
 @media (max-width: 960px) {
   .pricing-heading {
-    font-size: 3rem;
+    font-size: 2.3rem;
   }
 
   .pricing-card-cell {
@@ -181,7 +181,7 @@
 
 @media (max-width: 480px) {
   .pricing-heading {
-    font-size: 2.4rem;
+    font-size: 2rem;
   }
 
   .pricing-card {
@@ -199,4 +199,26 @@
   .pricing-subtext {
     font-size: 0.98rem;
   }
+}
+/* Free consultation card — gently highlighted */
+.pricing-card--free {
+  background: radial-gradient(circle at top left, #ffffff 0, #eef8f1 55%, #d9edE1 100%);
+  border: 1px solid rgba(76, 111, 82, 0.22);
+}
+
+.pricing-card--free .pricing-price {
+  color: #2f5a3c;
+  font-size: 1.35rem;
+}
+
+.pricing-card--free .pricing-subtext:last-child {
+  margin-top: 0.9rem;
+  font-size: 0.92rem;
+  font-style: italic;
+  color: #4a5d51;
+}
+
+/* keep the three price cards on one baseline */
+.pricing-card-cell {
+  vertical-align: top;
 }

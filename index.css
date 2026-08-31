@@ -1,8 +1,8 @@
 .home-title {
   white-space: normal;
-  font-family: 'EB Garamond', serif;
+  font-family: var(--font-heading);
   
-  font-size: 3.7rem;
+  font-size: 2.7rem;
   margin-bottom: 1.3rem;
   line-height: 1.15;
 
@@ -28,7 +28,7 @@
 }
 
 .home-subtitle {
-  font-size: 2rem;
+  font-size: 1.35rem;
   font-weight: 300;
   color: var(--color-text-muted);
   font-style: italic;
@@ -48,7 +48,7 @@
   list-style: none;
   padding-left: 0;
   margin-top: 1.7rem;
-  font-size: 1.3rem;
+  font-size: 1.02rem;
 }
 
 .benefits-list li {
@@ -83,39 +83,39 @@
 
 @media (max-width: 1325px) {
   .home-subtitle {
-    font-size: 1.8rem;
+    font-size: 1.25rem;
   }
 }
 
 @media (max-width: 1212px) {
   .home-subtitle {
-    font-size: 1.6rem;
+    font-size: 1.2rem;
   }
 }
 
 @media (max-width: 1110px) {
   .home-title {
-    font-size: 3rem;
+    font-size: 2.3rem;
   }
 
   .home-subtitle {
-    font-size: 1.4rem;
+    font-size: 1.1rem;
   }
 }
 
 @media (max-width: 1000px) {
   .home-title {
-    font-size: 2.8rem;
+    font-size: 2.1rem;
   }
 
   .home-subtitle {
-    font-size: 1.2rem;
+    font-size: 1.05rem;
   } 
 }
 
 @media (max-width: 940px) {
   .home-title {
-    font-size: 2.6rem;
+    font-size: 2rem;
   }
 
   .benefits-list {
@@ -125,7 +125,7 @@
 
 @media (max-width: 889px) {
   .home-title {
-    font-size: 3.3rem;
+    font-size: 2.4rem;
     text-align: center;
   }
 
@@ -135,7 +135,7 @@
   }
 
   .home-subtitle {
-    font-size: 2rem;
+    font-size: 1.4rem;
     margin-bottom: -5rem;
     text-align: center;
   }
@@ -185,20 +185,20 @@
 
 @media (max-width: 600px) {
   .home-title {
-    font-size: 2.9rem;
+    font-size: 2.1rem;
   }
 
   .home-subtitle {
-    font-size: 1.6rem;;
+    font-size: 1.2rem;
   }
 }
 
 @media (max-width: 480px) {
   .home-title {
-    font-size: 2.5rem;
+    font-size: 1.9rem;
   }
 
   .home-subtitle {
-    font-size: 1.3rem;;
+    font-size: 1.05rem;
   }
 }

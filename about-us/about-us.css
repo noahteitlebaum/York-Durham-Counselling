@@ -1,6 +1,6 @@
 .team-heading {
-  font-family: var(--font-heading, 'Cormorant Garamond', serif);
-  font-size: 5rem;
+  font-family: var(--font-heading);
+  font-size: 3.2rem;
   font-weight: 700;
   color: #111;
   text-align: center;
@@ -75,7 +75,7 @@
 
 /* Name */
 .team-name {
-  font-size: 2.5rem;
+  font-size: 1.7rem;
   font-weight: 700;
   margin: 0 0 0.2rem;
   color: #111;
@@ -83,16 +83,16 @@
 
 /* Credentials */
 .team-title {
-  margin-top: -1.5rem;
-  font-size: 2rem;
-  font-weight: 500;
+  margin-top: -0.6rem;
+  font-size: 1rem;
+  font-weight: 700;
   letter-spacing: 0.13em;
   text-transform: uppercase;
   color: #555;
 }
 
 .email {
-    font-size: 1.2rem !important;
+    font-size: 0.95rem !important;
 }
 
 /* Bio paragraphs */
@@ -178,7 +178,7 @@
 
 @media (max-width: 500px) {
     .team-heading {
-    font-size: 4rem !important;
+    font-size: 2.6rem !important;
   }
 }
 
