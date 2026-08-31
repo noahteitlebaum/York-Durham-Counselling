@@ -188,6 +188,12 @@ h6 {
   width: calc(100% / 6);
 }
 
+/* Mobile sidebar toggle button — hidden by default, restyled and
+   shown only inside the max-width:900px mobile nav below. */
+.slide-toggle {
+  display: none;
+}
+
 body {
   padding-top: 180px;      /* Gap fix between menu and content */
 }
@@ -670,7 +676,7 @@ textarea:focus {
   .contact-row td {
     display: block;
     width: 100%;
-    padding: 20px 0 18px 0;
+    padding: 0 0 18px 0;
     text-align: center;
   }
 
@@ -1031,6 +1037,11 @@ textarea:focus {
 .gallery-item {
   flex: 1 1 260px;
   max-width: 360px;
+}
+
+.gallery-grid--single .gallery-item {
+  flex: 0 1 420px;
+  max-width: 420px;
 }
 
 .gallery-photo {

@@ -1,47 +1,220 @@
-.home-title {
-  white-space: normal;
-  font-family: var(--font-heading);
-  
-  font-size: 2.7rem;
-  margin-bottom: 1.3rem;
-  line-height: 1.15;
+/* ==================================================================
+   Home hero — mockup build
+   Cream ground, leaf watermark, large logo, sage "Welcome to" over a
+   two-line serif title, leaf divider, tagline, lede, rectangular CTA,
+   curved-edge team photo, sage wave band.
+   ================================================================== */
 
+/* ---- Hero shell ---- */
+.home-hero {
   position: relative;
-  letter-spacing: 0.04em;
-  font-weight: 500;
-  background: linear-gradient(120deg, var(--color-primary-dark), var(--color-primary-light));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  margin: 1.6rem -7vw 0;
+  overflow: hidden;
+  background: #f6f1e4;
+  min-height: 1000px;
 }
 
-.home-title::after {
-  content: "";
+.home-hero-decor {
   position: absolute;
-  left: 0;
-  bottom: -0.6rem;
-  width: 72px;
-  height: 3px;
-  border-radius: 999px;
-  background: linear-gradient(90deg, var(--color-primary-dark), var(--color-accent-mint));
-  box-shadow: 0 6px 18px rgba(76, 111, 82, 0.35);
+  top: 40px;
+  left: -30px;
+  width: 300px;
+  height: 380px;
+  z-index: 0;
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.home-hero-decor svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* thin sage arc echoing the photo edge */
+.home-hero-arc {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 38%;
+  width: 26%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.home-hero-arc svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* ---- Right side: curved team photo ---- */
+.home-hero-photo {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 90px;
+  width: 58%;
+  z-index: 2;
+}
+
+.hero-photo-full {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 22%;
+  clip-path: url(#heroPhotoClip);
+}
+
+/* ---- Left side: copy ---- */
+.home-hero-text {
+  position: relative;
+  z-index: 3;
+  width: 42%;
+  padding: 3.2rem 3rem 15rem 7vw;
+}
+
+.hero-logo-badge {
+  width: 340px;
+  max-width: 100%;
+  margin: 0 0 1.6rem 2.2rem;
+}
+
+.hero-logo-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.hero-eyebrow {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  font-size: 3.1rem;
+  line-height: 1.1;
+  letter-spacing: 0;
+  text-transform: none;
+  color: #8b9d76;
+  margin: 0 0 0.15rem;
+}
+
+.home-hero-text .home-title {
+  font-family: var(--font-heading);
+  font-size: 4.5rem;
+  font-weight: 700;
+  line-height: 1.06;
+  letter-spacing: 0;
+  color: #2f4a2b;
+  margin: 0 0 1.4rem;
+}
+
+.hero-divider {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin: 0 0 1.4rem;
+  max-width: 560px;
+}
+
+.hero-divider-line {
+  flex: 1 1 0;
+  width: auto;
+  height: 1px;
+  background: rgba(62, 92, 58, 0.3);
+}
+
+.hero-leaf {
+  font-size: 1.4rem;
+  line-height: 1;
 }
 
 .home-subtitle {
+  font-family: var(--font-heading);
+  font-size: 2.05rem;
+  font-weight: 700;
+  color: #2f4a2b;
+  margin: 0 0 1.6rem;
+}
+
+.hero-lede {
+  font-family: var(--font-body);
   font-size: 1.35rem;
-  font-weight: 300;
-  color: var(--color-text-muted);
+  line-height: 1.65;
+  color: #3f4a3d;
+  max-width: 560px;
+  margin: 0 0 2.4rem;
+}
+
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 1.15rem 2.1rem;
+  border-radius: 10px;
+  background: #4e6b41;
+  color: #ffffff;
+  font-family: var(--font-body);
+  font-size: 1.4rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: none;
+  transition: background var(--transition-fast);
+}
+
+.hero-cta:hover {
+  background: #3e5c3a;
+  transform: none;
+  box-shadow: none;
+}
+
+.hero-cta-icon {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.hero-microcopy {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-body);
+  font-size: 1.2rem;
   font-style: italic;
+  color: #5d6a54;
+  margin: 1.5rem 0 0;
 }
 
-.logo-image {
-  width: 300px;
-  height: 300px;
+/* ---- Bottom wave band ---- */
+.home-hero-wave {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  line-height: 0;
+  z-index: 4;
+  pointer-events: none;
 }
 
+.home-hero-wave svg {
+  display: block;
+  width: 100%;
+  height: 220px;
+}
+
+/* ==================================================================
+   Rest of home page
+   ================================================================== */
 .water-drop {
   width: 800px;
   height: 400px;
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: 3.3rem;
+  font-weight: 700;
+  line-height: 1.14;
+  color: var(--color-primary-dark);
+  margin: 0 0 1.1rem;
 }
 
 .benefits-list {
@@ -53,7 +226,7 @@
 
 .benefits-list li {
   position: relative;
-  background: rgba(214, 239, 224, 0.45); /* light mint */
+  background: rgba(214, 239, 224, 0.45);
   border: 1px solid rgba(76, 111, 82, 0.18);
   padding: 1rem 1.2rem;
   border-radius: 12px;
@@ -68,79 +241,134 @@
   background: rgba(214, 239, 224, 0.65);
 }
 
-.benefits-list li::before {
-  content: '✦';
-  color: var(--color-primary);
-  font-size: 1rem;
-  margin-top: 0.35rem;
-  flex-shrink: 0;
-}
-
 .benefits-list li strong {
   color: var(--color-text);
   font-weight: 600;
 }
 
-@media (max-width: 1325px) {
+/* ==================================================================
+   Responsive
+   ================================================================== */
+@media (max-width: 1400px) {
+  .home-hero {
+    min-height: 900px;
+  }
+
+  .hero-logo-badge {
+    width: 280px;
+  }
+
+  .hero-eyebrow {
+    font-size: 2.6rem;
+  }
+
+  .home-hero-text .home-title {
+    font-size: 3.7rem;
+  }
+
   .home-subtitle {
-    font-size: 1.25rem;
+    font-size: 1.8rem;
   }
 }
 
-@media (max-width: 1212px) {
-  .home-subtitle {
-    font-size: 1.2rem;
-  }
-}
-
-@media (max-width: 1110px) {
-  .home-title {
-    font-size: 2.3rem;
+@media (max-width: 1150px) {
+  .home-hero {
+    min-height: 800px;
   }
 
+  .home-hero-text {
+    width: 46%;
+    padding: 2.6rem 2rem 15rem 6vw;
+  }
+
+  .hero-logo-badge {
+    width: 220px;
+    margin-left: 0;
+  }
+
+  .hero-eyebrow {
+    font-size: 2.1rem;
+  }
+
+  .home-hero-text .home-title {
+    font-size: 3rem;
+  }
+
   .home-subtitle {
-    font-size: 1.1rem;
+    font-size: 1.5rem;
+  }
+
+  .hero-lede {
+    font-size: 1.15rem;
+  }
+
+  .hero-cta {
+    font-size: 1.15rem;
+    padding: 1rem 1.7rem;
   }
 }
 
 @media (max-width: 1000px) {
-  .home-title {
-    font-size: 2.1rem;
+  .home-hero {
+    min-height: 0;
+    margin-bottom: 2rem;
   }
 
-  .home-subtitle {
-    font-size: 1.05rem;
-  } 
-}
-
-@media (max-width: 940px) {
-  .home-title {
-    font-size: 2rem;
+  .home-hero-decor,
+  .home-hero-arc {
+    display: none;
   }
 
-  .benefits-list {
-    font-size: 1.1rem;
+  /* stack: photo above copy */
+  .home-hero-photo {
+    position: relative;
+    width: 100%;
+    bottom: auto;
+    height: 340px;
+  }
+
+  .hero-photo-full {
+    clip-path: none;
+    object-position: center 25%;
+  }
+
+  .home-hero-text {
+    width: 100%;
+    padding: 2.6rem 6vw 9rem;
+    text-align: center;
+  }
+
+  .hero-logo-badge {
+    width: 200px;
+    margin: 0 auto 1.4rem;
+  }
+
+  .hero-divider,
+  .hero-microcopy {
+    justify-content: center;
+  }
+
+  .hero-divider {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-lede {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-cta {
+    margin: 0 auto;
+  }
+
+  .home-hero-wave svg {
+    height: 120px;
   }
 }
 
 @media (max-width: 889px) {
-  .home-title {
-    font-size: 2.4rem;
-    text-align: center;
-  }
-
-  .home-title::after {
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  .home-subtitle {
-    font-size: 1.4rem;
-    margin-bottom: -5rem;
-    text-align: center;
-  }
-
-  .logo-image,
   .water-drop {
     width: 500px;
     height: auto;
@@ -158,47 +386,46 @@
     text-align: center;
   }
 
-  .section-table:nth-of-type(1) .image-cell {
-    order: 2;
-  }
-
-  .section-table:nth-of-type(1) .text-cell {
-    order: 1;
-  }
-
-  .section-table:nth-of-type(2) .image-cell {
-    order: 1;
-  }
-
-  .section-table:nth-of-type(2) .text-cell {
-    order: 2;
+  .section-title {
+    font-size: 2.5rem;
   }
 }
 
 @media (max-width: 700px) {
-  .logo-image,
   .water-drop {
     height: 300px !important;
     width: auto;
   }
-}
 
-@media (max-width: 600px) {
-  .home-title {
-    font-size: 2.1rem;
+  .hero-eyebrow {
+    font-size: 1.7rem;
+  }
+
+  .home-hero-text .home-title {
+    font-size: 2.3rem;
   }
 
   .home-subtitle {
-    font-size: 1.2rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .home-title {
-    font-size: 1.9rem;
+    font-size: 1.25rem;
   }
 
-  .home-subtitle {
-    font-size: 1.05rem;
+  .hero-lede {
+    font-size: 1.02rem;
+  }
+
+  .hero-cta {
+    font-size: 1rem;
+  }
+
+  .hero-microcopy {
+    font-size: 0.95rem;
+  }
+
+  .hero-logo-badge {
+    width: 160px;
+  }
+
+  .section-title {
+    font-size: 2rem;
   }
 }

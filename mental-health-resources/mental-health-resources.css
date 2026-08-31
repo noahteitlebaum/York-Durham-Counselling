@@ -64,6 +64,19 @@
   vertical-align: top;
 }
 
+/* Last row has fewer cards than columns (e.g. 2 instead of 3) —
+   this cell spans the full row and centers its cards instead of
+   leaving them flush left with an empty gap. */
+.mh-resource-pair {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.mh-resource-pair .mh-resource-card {
+  flex: 0 1 32%;
+}
+
 /* Card styling */
 .mh-resource-card {
   background: radial-gradient(circle at top left, #f7faf8 0%, #ffffff 60%, #f3f5f2 100%);
@@ -216,6 +229,15 @@
     height: 400px;
     margin: 0 auto;
   }
+
+  .mh-resource-pair {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .mh-resource-pair .mh-resource-card {
+    flex: none;
+  }
 }
 /* ==================================================================
    ARTICLES & GUIDES
@@ -282,9 +304,8 @@
 .mh-article-thumb {
   display: block;
   width: 100%;
-  height: 250px;
+  height: 200px;
   object-fit: cover;
-  object-position: center 35%;
 }
 
 .mh-article-body {
